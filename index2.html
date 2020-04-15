@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    getAsync('http://openweathermap.org/img/wn/10d@2x.png')
+        .then(function(data){       
+                console.log(data);
+                insert(data);
+        });
+
+    async function getAsync(url) {
+    let response = await fetch(url);
+    let data= await response.blob();
+    return data
+}
+function insert(data){
+     let imgContainer =document.getElementById('insertCard');
+     console.log(imgContainer);
+     let newImg = document.createElement('img');
+     newImg.id='newIMG';
+     newImg.src='';
+     newImg.src=URL.createObjectURL(data);
+     console.log(newImg);
+     const before =document.getElementById('cardResponse');
+     console.log('dsdsa')
+     imgContainer.innerHTML = newImg;
+}
+</script>
+</html>
