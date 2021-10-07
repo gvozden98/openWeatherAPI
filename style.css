@@ -1,69 +1,65 @@
-
-header div h1{
-
-    font-family: 'Anton', sans-serif;
+header div h1 {
+  font-family: "Anton", sans-serif;
 }
-.color{
-    background:coral;
-    color: black;
-    border-color: black;
+.color {
+  background: coral;
+  color: black;
+  border-color: black;
 }
 .slidecontainer {
-    width: 100%; /* Width of the outside container */
-  }
-  
-  /* The slider itself */
-  .slider {
-    -webkit-appearance: none;  /* Override default CSS styles */
-    appearance: none;
-    width: 100%; /* Full-width */
-    height: 25px; /* Specified height */
-    background: black; /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
-  }
-  
-  /* Mouse-over effects */
-  .slider:hover {
-    opacity: 1; /* Fully shown on mouse-over */
-  }
-  
-  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: coral; /* Coral background */
-    cursor: pointer; /* Cursor on hover */
-  }
-  
-  .slider::-moz-range-thumb {
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: coral; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-  }
-  .wrapper{
-      display: grid;
-      grid-template-columns: 40% 60%;
-  }
-  .para{
-    text-align: center;
-    line-height: 100px;
-  }
-  #testhr{
-      display: none;
-  }
+  width: 100%; /* Width of the outside container */
+}
 
-  @media screen and (min-width:766px) and (max-width:1218px){
-        .para{
-            font-size: 50px;   
-        }
-      .wrapper{
-          
-          grid-template-columns: unset;
-      }
+/* The slider itself */
+.slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: black; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: coral; /* Coral background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: coral; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+.para {
+  text-align: center;
+  line-height: 100px;
+}
+#testhr {
+  display: none;
+}
+
+@media screen and (min-width: 766px) and (max-width: 1218px) {
+  .para {
+    font-size: 50px;
   }
+  .wrapper {
+    grid-template-columns: unset;
+  }
+}
