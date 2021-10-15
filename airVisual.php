@@ -74,7 +74,7 @@ function nearestCity($ip)
     } else {
         $closeCity = json_decode($resp, true);
         //print_r($decoded);
-        print_r($closeCity["data"]["current"]["pollution"]);
+        //print_r($closeCity["data"]["current"]["pollution"]);
     }
 
     curl_close($ch);
@@ -87,11 +87,9 @@ nearestCity($ip);
 <?php include "header.php" ?>
 <link rel="stylesheet" href="aqStyle.css">
 <div class="container">
-    <!-- <div class="jumbotron jumbotron-fluid">
-        <div class="container"> -->
-    <img src="aqi-index.jpg" alt="Air Pollution chart picture" id="pollutionChart">
-    <!-- </div>
-    </div> -->
+    <div id="pollutionI">
+        <img src="test.svg" alt="Air Pollution chart picture" id="pollutionChart" style="margin-bottom: 10px;border: 1px solid rgba(0, 0, 0, 0.125);">
+    </div>
     <div class="card-deck">
         <div class="card bg-light">
             <div class="card-body text-center">
@@ -111,7 +109,7 @@ nearestCity($ip);
         <div class="card bg-light">
             <!-- add a function for changing bg color on this card -->
             <div class="card-body text-center d-flex p-2 container" id="pollutionData" style="background-color: #42f55d;">
-                <div class="container">
+                <div class="container" id="testiram">
                     <img src="ic-face-green.svg" alt="index picture" id="pollutionEmoji">
                 </div>
                 <div class="container">
