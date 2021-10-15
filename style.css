@@ -63,3 +63,14 @@ header div h1 {
     grid-template-columns: unset;
   }
 }
+body {
+  padding-top: 70px;
+}
+#logo {
+  font-family: "Londrina Solid", cursive;
+  font-size: xx-large;
+}
+li a:hover {
+  border-radius: 15px;
+  background-color: coral;
+}
