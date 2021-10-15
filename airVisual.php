@@ -1,6 +1,12 @@
 <?php
-define("KEY", "");
+/* Add your API key here and remove the require "ignore.php"
+   This is done to keep my API key and ip adress hidden when uploading
+   The IP is used for testing because its on localhost
+*/
+//define("KEY", ""); 
 define("URL", "http://api.airvisual.com/v2/");
+
+require "ignore.php";
 
 $countries = array();
 requestCountries();
