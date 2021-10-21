@@ -84,7 +84,7 @@ nearestCity($ip);
 ?>
 
 
-<?php include "header.php" ?>
+<?php include "header.php" ?> 
 <link rel="stylesheet" href="aqStyle.css">
 <div class="container">
     <div id="pollutionI">
@@ -94,7 +94,7 @@ nearestCity($ip);
         <div class="card bg-light">
             <div class="card-body text-center">
                 <div class="form-group" id="state">
-                    <label for="selectCity" id="countryLabel">Choose a Country</label>
+                    <label for="selectCity" id="countryLabel">Choose a Country</label>           
                     <select class="form-control" id="selectCity">
                         <?php
                         echo $countries[0];
