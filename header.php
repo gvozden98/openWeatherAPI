@@ -31,7 +31,7 @@
                         <a class="nav-link" href="airVisual.php">Air Quality</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="form.php">Contact</a>
                     </li>
                 </ul>
             </div>
