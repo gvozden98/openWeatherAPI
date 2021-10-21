@@ -93,8 +93,8 @@ nearestCity($ip);
     <div class="card-deck">
         <div class="card bg-light">
             <div class="card-body text-center">
-                <div class="form-group">
-                    <label for="selectCity">Choose a Country</label>
+                <div class="form-group" id="state">
+                    <label for="selectCity" id="countryLabel">Choose a Country</label>
                     <select class="form-control" id="selectCity">
                         <?php
                         echo $countries[0];
@@ -115,7 +115,8 @@ nearestCity($ip);
                 <div class="container">
                     <?php
                     $aqiIndex = $closeCity["data"]["current"]["pollution"]["aqius"];
-                    echo "<span style=\"font-size: 30px;\">$aqiIndex</span> Aqi";
+                    echo "<span id=\"aqiValue\" style=\"font-size: 45px;\">$aqiIndex</span> <span>Aqi</span>";
+                    echo "<script src=\"js/changeColor.js\"></script>";
                     ?>
 
                 </div>
@@ -136,5 +137,6 @@ nearestCity($ip);
         </div>
     </div>
 </div>
-<script src="scrpitAirVisual.js"></script>
+<script type="module" src="js/chosenCity.js"></script>
+<script type="module" src="js/ignore2.js"></script>
 <?php include "footer.php" ?>
