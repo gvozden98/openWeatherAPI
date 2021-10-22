@@ -1,5 +1,3 @@
-//changes a color of the Aqi index div
-
 let pollutionIndexContainer = document.getElementById("pollutionData");
 let pollutionValue = document.getElementById("aqiValue");
 

@@ -2,7 +2,7 @@ import{key} from './ignore2.js';
 
 
 function chosenState() {
-    let chosenInput = document.getElementById("selectCity");
+    let chosenInput = document.getElementById("selectCountry");
     chosenInput.addEventListener('change', getState);
 
     function getState(e){
@@ -23,10 +23,13 @@ function chosenState() {
     function changeDom(response) {
         let selectFather = document.getElementById("state");
         let select = document.getElementById('selectState')
-        let labelState = document.getElementById('labelState');           
+        let labelState = document.getElementById('labelState');
+        let selectCity = document.getElementById('selectCity');           
         if (select != null) {
             select.remove();
             labelState.remove();
+            selectCity.remove();
+            labelCity.remove();
         }
         labelState = document.createElement('label');
         labelState.innerHTML="Choose a State";
@@ -37,11 +40,7 @@ function chosenState() {
         select.id=  "selectState";
         selectFather.appendChild(labelState);
         selectFather.appendChild(select);
-        let selectCountry = document.getElementById('selectCountry');
-        if (selectCountry!=null) {           
-            selectFather.appendChild(labelCountry);
-            selectFather.appendChild(selectCountry);
-        }
+
         
 
 
@@ -51,22 +50,21 @@ function chosenState() {
             opt.innerHTML = response.data[i].state;
             select.appendChild(opt);
         }
-        chosenCity(chosenInput.value,select.value);
+        chosenCity(chosenInput,select);
     }
 
 
    
 }
 function chosenCity(country,state){
-    let chosenStateElement = document.getElementById("selectState");
-    if (chosenStateElement == null) {
+    if (state == null) {
         return;
     }
-        chosenStateElement.addEventListener('change', getCity);
+    state.addEventListener('change', getCity);
         function getCity(e) {
             e.preventDefault();
             let xhr = new XMLHttpRequest();
-            xhr.open('GET',`http://api.airvisual.com/v2/cities?state=${state}&country=${country}&key=`+key,true);
+            xhr.open('GET',`http://api.airvisual.com/v2/cities?state=${state.value}&country=${country.value}&key=`+key,true);
             xhr.onload = function () {
             if (this.status == 200) {
                 const response = JSON.parse(this.responseText);
@@ -82,28 +80,28 @@ function chosenCity(country,state){
 //make one changeDom function, this is awful
 function changeDom2(response) {
     let selectFather = document.getElementById("state");
-    let selectCountry = document.getElementById('selectCountry');
-    let labelCountry = document.getElementById('labelCountry');           
-    if (selectCountry != null) {
-        selectCountry.remove();
-        labelCountry.remove();
+    let selectCity = document.getElementById('selectCity');
+    let labelCity = document.getElementById('labelCity');           
+    if (selectCity != null) {
+        selectCity.remove();
+        labelCity.remove();
     }
-    labelCountry = document.createElement('label');
-    labelCountry.innerHTML="Choose a City";
-    labelCountry.style.paddingTop = "10px";
-    labelCountry.id = "labelCountry";
-    selectCountry = document.createElement('select');
-    selectCountry.className = "form-control";
-    selectCountry.id=  "selectCountry";
-    selectFather.appendChild(labelCountry);
-    selectFather.appendChild(selectCountry);
+    labelCity = document.createElement('label');
+    labelCity.innerHTML="Choose a City";
+    labelCity.style.paddingTop = "10px";
+    labelCity.id = "labelCity";
+    selectCity = document.createElement('select');
+    selectCity.className = "form-control";
+    selectCity.id=  "selectCity";
+    selectFather.appendChild(labelCity);
+    selectFather.appendChild(selectCity);
     
 
     for (let i = 0; i<response.data.length; i++){
         let opt = document.createElement('option');
         opt.value = response.data[i].city;
         opt.innerHTML = response.data[i].city;
-        selectCountry.appendChild(opt);
+        selectCity.appendChild(opt);
     }
 }
 

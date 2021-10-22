@@ -88,14 +88,14 @@ nearestCity($ip);
 <link rel="stylesheet" href="css/aqStyle.css">
 <div class="container">
     <div id="pollutionI">
-        <img src="test.svg" alt="Air Pollution chart picture" id="pollutionChart" style="margin-bottom: 10px;border: 1px solid rgba(0, 0, 0, 0.125);">
+        <img src="pictures/test.svg" alt="Air Pollution chart picture" id="pollutionChart" style="margin-bottom: 10px;border: 1px solid rgba(0, 0, 0, 0.125);">
     </div>
     <div class="card-deck">
         <div class="card bg-light">
             <div class="card-body text-center">
                 <div class="form-group" id="state">
-                    <label for="selectCity" id="countryLabel">Choose a Country</label>
-                    <select class="form-control" id="selectCity">
+                    <label for="selectCountry" id="countryLabel">Choose a Country</label>
+                    <select class="form-control" id="selectCountry">
                         <?php
                         echo $countries[0];
                         foreach ($countries as $country) {
@@ -110,7 +110,7 @@ nearestCity($ip);
             <!-- add a function for changing bg color on this card -->
             <div class="card-body text-center d-flex p-2 container" id="pollutionData" style="background-color: #42f55d;">
                 <div class="container" id="testiram">
-                    <img src="ic-face-green.svg" alt="index picture" id="pollutionEmoji">
+                    <img src="pictures/ic-face-green.svg" alt="index picture" id="pollutionEmoji">
                 </div>
                 <div class="container">
                     <?php
