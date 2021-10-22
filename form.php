@@ -1,14 +1,14 @@
 <?php
-
+require('inc/db.php');
 $msg = '';
 $msgClass = '';
 
 if (filter_has_var(INPUT_POST, 'submit')) {
     //Get form data
-    $email = $_POST['email'];
-    $name = $_POST['name'];
-    $phone = $_POST['phone'];
-    $message = $_POST['message'];
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+    $message = mysqli_real_escape_string($conn, $_POST['message']);
 
     //check required fields
 
@@ -17,8 +17,8 @@ if (filter_has_var(INPUT_POST, 'submit')) {
             $msg = 'Please use a valid email';
             $msgClass = 'alert-danger';
         }
-        if (!is_numeric($phone) && strlen($phone) < 8) {
-            echo strlen($phone);
+        if (!is_numeric($phone)) {
+
             $msg = 'Please use a valid number';
             $msgClass = 'alert-danger';
         }
@@ -27,10 +27,19 @@ if (filter_has_var(INPUT_POST, 'submit')) {
         $msgClass = 'alert-danger';
     }
 }
+//hst name, username, pass, db name
+if (isset($_POST['submit'])) {
+    $query = "INSERT INTO messages(email,name,phone,message) VALUES ('$email','$name', '$phone', '$message')";
+    if (mysqli_query($conn, $query)) {
+        header('Location: ' . ROOT_URL . '');
+    } else {
+        echo 'ERROR: ' . mysqli_error($conn);
+    }
+}
 
 ?>
 
-<?php include "header.php" ?>
+<?php include "inc/header.php" ?>
 <link rel="stylesheet" href="formStyle.css">
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     <div class="container">
@@ -82,4 +91,4 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 </form>
 
 
-<?php include "footer.php" ?>
+<?php include "inc/footer.php" ?>

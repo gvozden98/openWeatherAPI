@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include 'inc/header.php'; ?>
 <br>
 <div class="container">
   <div class="row">
@@ -76,10 +76,10 @@
   </div>
 
   <!-- Footer -->
-  <?php include 'footer.php'; ?>
+  <?php include 'inc/footer.php'; ?>
 
 
   <!-- Footer -->
   <!-- Optional JavaScript -->
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

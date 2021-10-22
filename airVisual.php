@@ -6,7 +6,7 @@
 //define("KEY", ""); 
 define("URL", "http://api.airvisual.com/v2/");
 
-require "ignore.php";
+require "inc/ignore.php";
 
 $countries = array();
 requestCountries();
@@ -84,8 +84,8 @@ nearestCity($ip);
 ?>
 
 
-<?php include "header.php" ?>
-<link rel="stylesheet" href="aqStyle.css">
+<?php include "inc/header.php" ?>
+<link rel="stylesheet" href="css/aqStyle.css">
 <div class="container">
     <div id="pollutionI">
         <img src="test.svg" alt="Air Pollution chart picture" id="pollutionChart" style="margin-bottom: 10px;border: 1px solid rgba(0, 0, 0, 0.125);">
@@ -139,4 +139,4 @@ nearestCity($ip);
 </div>
 <script type="module" src="js/chosenCity.js"></script>
 <script type="module" src="js/ignore2.js"></script>
-<?php include "footer.php" ?>
+<?php include "inc/footer.php" ?>
