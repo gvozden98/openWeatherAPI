@@ -2,3 +2,4 @@ ignore.php
 ignore2.js
 config.php
 .vscode
+.vscode/launch.json
